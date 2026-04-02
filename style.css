@@ -1,0 +1,47 @@
+body {
+    font-family:
+    Futura, Helvetica, Arial, sans-serif;
+    background-image: url(images/mock_background.png); 
+    background-repeat: no-repeat;                   
+    background-size: cover;              
+    background-position: center;                  
+    background-attachment: fixed;                                  
+    margin: 0;
+    padding: 0;          
+}
+
+.troll:link, .troll:visited {
+    color: blue;
+    background-color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+.troll:hover, .troll:active{
+    background-color:red;
+}
+
+.sangwhich {
+    position: fixed;
+  top: 43%;
+  left: 70%;
+  width: 100%;
+}
+
+.heater {
+  position: fixed;
+  top: 30%;
+  bottom: 70%;
+  left: 50%;
+  width: 100%;
+}
+
+.working {
+    position:fixed;
+    right: 70%;
+    bottom: 10%;
+}
+
