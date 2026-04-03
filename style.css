@@ -10,7 +10,7 @@ body {
     padding: 0;          
 }
 
-.troll:link, .troll:visited {
+/*.troll:link, .troll:visited {
     color: blue;
     background-color: white;
     padding: 15px 25px;
@@ -22,26 +22,27 @@ body {
 
 .troll:hover, .troll:active{
     background-color:red;
-}
+}*/
 
 .sangwhich {
-    position: fixed;
+    position: absolute;
   top: 43%;
   left: 70%;
   width: 100%;
 }
 
 .heater {
-  position: fixed;
-  top: 30%;
+  position: absolute;
+transform: scale(1.3,1.3) translate(750px, 250px);
+/*  top: 40%;
   bottom: 70%;
   left: 50%;
-  width: 100%;
+  width: 100%;*/
 }
 
 .working {
-    position:fixed;
-    right: 70%;
-    bottom: 10%;
+    position:absolute;
+    transform: scale(1.3, 1.3);
+    top: 35%;
+    left: 13%
 }
-
