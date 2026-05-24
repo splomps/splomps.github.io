@@ -8,18 +8,23 @@
 </head>
 <body>
 <div class="grid-container">
-    <img class="menu" src="/images/menu.png" alt="how are you going to order now"></img>
-    <img class="worker" src="/images/mock_cat.gif"  alt="i will not take your order">
+    <picture class="menu">
+        <source media="(max-width:1200px)"
+        srcset="/images/small_menu.png">
+    <img class="menu" src="/images/menu.png" alt="menu"></img>
+    </picture>
+    <img class="worker" src="/images/mock_cat.gif"  alt="worker cat">
     <img class="counter" src="/images/counter.png">
     <picture class="heater">
-            <source media="(max-width:1000px)"
-        srcset="/images/tall_heater.png">
-            <img class="heater" src="/images/heater2.png" alt="really hope you're not seeing this">
+            <source media="(max-width:1200px)"
+                srcset="/images/tall_heater.png">
+            <img class="heater" src="/images/heater2.png" alt="food heater">
     </picture>
-    <div class="food-slot">
-     <a class="food-item" href="gallery.html" target="_blank">
-        <img src="/images/burger.png" alt="Burger">
-    </a>
+    <div class="heater_container">
+        <a class= "food burger" href="gallery.html" target="_blank">
+            <img src="/images/burger.png" class="burger" alt="Burger">
+        </a>
+    </div>
 </div>
     
 </div>
