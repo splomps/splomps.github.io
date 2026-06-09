@@ -12,7 +12,7 @@ main {
 body {
     font-family:
     Futura, Helvetica, Arial, sans-serif;
-    background-image: url(/images/background.png); 
+    background-image: url(splomps/images/background.png); 
     background-repeat: no-repeat;                   
     background-size: cover;              
     background-position: center;                  
