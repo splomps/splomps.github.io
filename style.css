@@ -12,6 +12,508 @@ main {
 body {
     font-family:
     Futura, Helvetica, Arial, sans-serif;
+    background-image: url(images/pixel_bg2.png); 
+    background-repeat: no-repeat;                   
+    background-size: cover;              
+    background-position: center;                  
+    background-attachment: fixed;
+    overflow: hidden;
+    position: relative;                                  
+    margin: 0;
+    padding: 0;          
+}
+
+/*.container-fluid { 
+    margin:auto;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: row nowrap; /* shorthand for setting both felx-direction and flex-wrap properties
+    padding: 5px;
+    gap: 10px;
+    justify-content: space-between;
+}*/
+
+.grid-container {
+    display:grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-template-rows: repeat(12, [row-start] 1fr);
+    height: 100vh;
+    position: absolute;
+    /*grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 0.5fr;
+    min-height:100vh;*/
+}
+
+.menu {
+    width: clamp(300px, 58vw, 2000px);
+    top: 0;
+    flex-shrink: 0.5;
+    transform: translateY(-10%);
+    justify-self: flex-end;
+    grid-column: 5 / span 12;
+    grid-row: 1 / span 4;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    z-index: 1;
+
+    
+}
+
+/* .menu {
+    width: clamp(500px, 60vw, 2000px);
+    top: 0;
+    max-width: 100%;
+    transform: translateY(-10%);
+    justify-self: flex-end;
+    grid-column: 5 / span 12;
+    grid-row: 1 / span 4;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    z-index: 1;
+
+    
+}*/
+
+.worker {
+    width: clamp(200px, 23vw, 1400px);
+    flex-basis: 23vw;
+    flex-shrink: 1;
+    height: auto;
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 7;
+    justify-content: end;
+    align-self: end;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    z-index: 1;
+}
+
+.cash_register {
+    width: clamp(350px, 25vw, 1400px);
+    transform: translateX(-5%);
+    flex-shrink: 1;
+    grid-column: 1 / span 4;
+    grid-row: 4/ span 4;
+    position: absolute;
+    justify-content: end;
+    align-self: end;
+    z-index: 3;
+}
+
+.beverage {
+    width: 100%;
+    min-width: 130px;
+    max-width: 100%;
+    grid-column: 5 / span 1;
+    grid-row: 8 / span 2;
+    position: absolute;
+    justify-content: end;
+    align-self: end;
+    z-index: 2;
+}
+.heater-ui {
+    display: grid;
+    align-self:end;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    flex-grow:1;
+    width: clamp(300px,48vw, 60vw);
+    grid-column: 7 / span 5;
+    top: 27%;
+    grid-row: 3/ span 7;
+    position: absolute;
+    justify-items: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.heater-ui > * {
+    grid-area: 1/1;
+    position: absolute;
+    inset: 0;
+}
+
+.heater {
+    width: 100%;
+    top: 17%;
+    height: auto;
+    display: block;
+    object-fit: fill;
+
+}
+
+.overlay_grid {            
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center; 
+    align-items: end;
+    padding: 10%;
+    gap: 3%;
+    /*left:9%;
+    top:14%;*/
+    width:90%;
+    object-fit: fill;
+    z-index: 3;
+}
+
+.burger {
+        width:100%;
+        flex: 1 1 auto;
+        /*width:clamp(140px, 2vw, 300px);*/
+        z-index: 2;
+        display: block;
+        object-fit: contain;
+}
+
+#b1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+
+}
+
+#b2 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#b3 {
+    padding: 5%;
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#b4 {
+    grid-column: 1/span 1;
+    grid-row: 3/ span 1;
+}
+
+#b5 {
+    grid-column: 2/span 1;
+    grid-row: 3/ span 1;
+}
+
+#b6 {
+    grid-column: 3/span 1;
+    grid-row: 3/ span 1;
+}
+
+/*.burger2 {
+        width: 100%;
+        min-width: 130px;
+        z-index: 2;
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+        display: block;
+        object-fit: contain;
+        justify-self: end;
+}
+
+.burger3 {
+        width: 100%;
+        z-index: 2;
+        min-width: 130px;
+        grid-column: 4 / span 1;
+        grid-row: 2 / span 1;
+        display: block;
+        object-fit: contain;
+        justify-self: end;
+}
+*/
+
+/* desktop minimized browser*/
+@media (max-width: 1100px) {
+   .heater-ui {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    flex-grow:1;
+    flex-shrink:1;
+    width: 50vh;
+    max-width: 100% /*clamp(400px, 40vw, 1100px)*/;
+    grid-column: 7 / span 5;
+    grid-row: 4/ span 2;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.heater-ui > * {
+    grid-area: 1/1;
+}
+
+.heater {
+    min-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: fill;
+    position: absolute;
+
+}
+
+.overlay_grid {            
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center; 
+    align-items: end;
+    padding: 100px;
+    /*left:9%;
+    top:14%;*/
+    width:100%;
+    object-fit: fill;
+    position:absolute;
+    z-index: 3;
+}
+
+.burger {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 14vh;
+        z-index: 2;
+        display: block;
+        object-fit: contain;
+}
+
+#b1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+
+}
+
+#b2 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#b3 {
+    width: 90%;
+    min-width: 0;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#b4 {
+    grid-column: 2/span 1;
+    grid-row: 3/ span 1;
+}
+
+#b5 {
+    grid-column: 1/span 1;
+    grid-row: 5/ span 1;
+}
+
+#b6 {
+    grid-column: 2/span 1;
+    grid-row: 5/ span 1;
+}
+
+    .beverage {
+    width: 100%;
+    min-width: 130px;
+    grid-column: 6 / span 1;
+    grid-row: 8 / span 2;
+    position: absolute;
+    justify-content: end;
+    align-self: end;
+    z-index: 2;
+}
+
+  .worker {
+    width: clamp(300px, 7vw, 500px);
+    height: auto;
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 7;
+    justify-content: end;
+    align-self: end;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    z-index: 1;
+}
+
+    .cash_register {
+    width: 100%;
+    min-width: 370px;
+    grid-column: 1 / span 4;
+    grid-row: 4/ span 4;
+    position: absolute;
+    justify-content: end;
+    align-self: end;
+    z-index: 3;
+}
+}
+
+.counter {
+    width: 100vw;
+    height: 100%;
+    grid-column: 1 / span 12;
+    grid-row: 11 / span 2;
+    object-fit: scale_down;
+    z-index: 2;
+}
+
+#discordBtn {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#discordBtn:hover {opacity: 0.7;}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 676767676767;
+    left: 0;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*mobile media query*/
+@media screen and (min-width: 300) and (max-width: 767px) {
+   .heater-ui {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    flex-grow:1;
+    flex-shrink:1;
+    width: 2vh;
+    max-width: 100% /*clamp(400px, 40vw, 1100px)*/;
+    grid-column: 7 / span 5;
+    grid-row: 4/ span 2;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.heater-ui > * {
+    grid-area: 1/1;
+}
+
+.heater {
+    min-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: fill;
+    position: absolute;
+
+}
+
+.overlay_grid {            
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center; 
+    align-items: end;
+    padding: 100px;
+    /*left:9%;
+    top:14%;*/
+    width:100%;
+    object-fit: fill;
+    position:absolute;
+    z-index: 3;
+}
+
+.burger {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 14vh;
+        z-index: 2;
+        display: block;
+        object-fit: contain;
+}
+
+#b1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+
+}
+
+#b2 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+#b3 {
+    width: 90%;
+    min-width: 0;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#b4 {
+    grid-column: 2/span 1;
+    grid-row: 3/ span 1;
+}
+
+#b5 {
+    grid-column: 1/span 1;
+    grid-row: 5/ span 1;
+}
+
+#b6 {
+    grid-column: 2/span 1;
+    grid-row: 5/ span 1;
+}
+
+    .beverage {
+    width: 100%;
+    min-width: 130px;
+    grid-column: 6 / span 1;
+    grid-row: 8 / span 2;
+    position: absolute;
+    justify-content: end;
+    align-self: end;
+    z-index: 2;
+}
+
+  .worker {
+    width: clamp(60px, 2vw, 300px);
+    height: auto;
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 7;
+    justify-content: end;
+    align-self: end;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    z-index: 1;
+}
+
+    .cash_register {
+    width: 50px;
+    grid-column: 1 / span 4;
+    grid-row: 4/ span 4;
+    position: absolute;
+    justify-content: end;
+    align-self: end;
+    z-index: 3;
+}
+}* {
+  box-sizing: border-box;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 10%;
+}
+
+body {
+    font-family:
+    Futura, Helvetica, Arial, sans-serif;
     background-image: url(images/master_files/pixel_bg2.png); 
     background-repeat: no-repeat;                   
     background-size: cover;              
